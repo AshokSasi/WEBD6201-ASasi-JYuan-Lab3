@@ -437,7 +437,6 @@
         case "edit": return displayEdit;
         case "login": return displayLogin;
         case "register": return displayRegister;
-        case "task-list": return DisplayTaskList;
         case "404": return display404;
         default:
           console.error("ERROR: callback does not exist: " + activeLink);
@@ -483,7 +482,6 @@
      */
     function DisplayTaskList()
     {
-      authGuard();
         let messageArea = $("#messageArea");
         messageArea.hide();
         let taskInput = $("#taskTextInput");
