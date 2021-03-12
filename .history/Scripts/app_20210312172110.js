@@ -7,10 +7,7 @@ WEBD6201 Lab3
 
 ((core) => {
 
-  /**
-   *Adds the mouse events to the nav bar links
-   *
-   */
+  /** */
   function addLinkEvents() {
     $("ul>li>a").off("click");
     $("ul>li>a").off("mouseover");
@@ -22,11 +19,6 @@ WEBD6201 Lab3
     });
   }
 
-  /**
-   *Highlights the active link
-   *
-   * @param {string} link
-   */
   function highlightActiveLink(link) {
     $(`#${router.ActiveLink}`).removeClass("active");
     if (link == "logout") {
@@ -38,13 +30,6 @@ WEBD6201 Lab3
     $(`#${router.ActiveLink}`).addClass("active");
   }
 
-  /**
-   *
-   *This function switches page content relative to the link that is passed into the function 
-   optionally, the link data can be also be passed 
-   * @param {string} link
-   * @param {string} [data=""]
-   */
   function loadLink(link, data = "") {
     highlightActiveLink(link);
     router.LinkData = data;
@@ -86,10 +71,6 @@ WEBD6201 Lab3
     });
   }
 
-  /**
-   *This function loads the page footer
-   *
-   */
   function loadFooter() {
     // inject the Footer
     $.get("./Views/components/footer.html", function (data) {
@@ -105,10 +86,6 @@ WEBD6201 Lab3
 
   function displayServices() {}
 
-  /**
-   *This function test the users full name for validity
-   *
-   */
   function testFullName() {
     let messageArea = $("#messageArea").hide();
     let fullNamePattern = /([A-Z][a-z]{1,25})+(\s|,|-)([A-Z][a-z]{1,25})+(\s|,|-)*/;
@@ -128,9 +105,6 @@ WEBD6201 Lab3
     });
   }
 
-  /**
-   * This function tests the inputted contact number for validity
-   */
   function testContactNumber() {
     let messageArea = $("#messageArea");
     let contactNumberPattern = /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/;
@@ -150,10 +124,6 @@ WEBD6201 Lab3
     });
   }
 
-  /**
-   *This function tests the inputted email address for validity
-   *
-   */
   function testEmailAddress() {
     let messageArea = $("#messageArea");
     let emailAddressPattern = /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6})*$/;
@@ -171,20 +141,12 @@ WEBD6201 Lab3
     });
   }
 
-  /**
-   *This function calls the validation functions to validate full name, contact number, and email address.
-   *
-   */
   function formValidation() {
     testFullName();
     testContactNumber();
     testEmailAddress();
   }
 
-  /**
-   *This function displays the contact page
-   *
-   */
   function displayContact() {
     // form validation
     formValidation();
@@ -206,10 +168,6 @@ WEBD6201 Lab3
     });
   }
 
-  /**
-   *This function displays the contact list page
-   *
-   */
   function displayContactList() {
     // don't allow visitors to go here
     authGuard();
@@ -260,10 +218,6 @@ WEBD6201 Lab3
     }
   }
 
-  /**
-   *This function displays the edit page
-   *
-   */
   function displayEdit() {
     let key = router.LinkData;
 
@@ -384,10 +338,6 @@ WEBD6201 Lab3
 
   function displayRegister() {}
 
-  /**
-   *This function toggles the login button to logout and adds the contact list and task list links to the nav bar
-   *
-   */
   function toggleLogin() {
     let contactListLink = $("#contactListLink")[0];
     let taskListLink = $("#task-listLink")[0];
@@ -424,10 +374,6 @@ WEBD6201 Lab3
     highlightActiveLink(router.ActiveLink);
   }
 
-  /**
-   *This function stops a non logged in user from entering locked pages
-   *
-   */
   function authGuard() {
     if (!sessionStorage.getItem("user")) {
       // redirect back to login page
@@ -437,12 +383,6 @@ WEBD6201 Lab3
 
   function display404() {}
 
-  /**
-   *This function associates and returns a related callback to a route
-   *
-   * @param {string} activeLink
-   * @return {function} 
-   */
   function ActiveLinkCallBack(activeLink) {
     switch (activeLink) {
       case "home":
@@ -555,10 +495,6 @@ WEBD6201 Lab3
     });
   }
 
-  /**
-   *This is the entry point for our program
-   *
-   */
   function Start() {
     console.log("App Started...");
 

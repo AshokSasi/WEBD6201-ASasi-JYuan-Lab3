@@ -555,10 +555,6 @@ WEBD6201 Lab3
     });
   }
 
-  /**
-   *This is the entry point for our program
-   *
-   */
   function Start() {
     console.log("App Started...");
 

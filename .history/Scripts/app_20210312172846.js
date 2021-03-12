@@ -437,12 +437,6 @@ WEBD6201 Lab3
 
   function display404() {}
 
-  /**
-   *This function associates and returns a related callback to a route
-   *
-   * @param {string} activeLink
-   * @return {function} 
-   */
   function ActiveLinkCallBack(activeLink) {
     switch (activeLink) {
       case "home":
@@ -555,10 +549,6 @@ WEBD6201 Lab3
     });
   }
 
-  /**
-   *This is the entry point for our program
-   *
-   */
   function Start() {
     console.log("App Started...");
 

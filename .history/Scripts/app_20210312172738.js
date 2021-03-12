@@ -384,10 +384,6 @@ WEBD6201 Lab3
 
   function displayRegister() {}
 
-  /**
-   *This function toggles the login button to logout and adds the contact list and task list links to the nav bar
-   *
-   */
   function toggleLogin() {
     let contactListLink = $("#contactListLink")[0];
     let taskListLink = $("#task-listLink")[0];
@@ -424,10 +420,6 @@ WEBD6201 Lab3
     highlightActiveLink(router.ActiveLink);
   }
 
-  /**
-   *This function stops a non logged in user from entering locked pages
-   *
-   */
   function authGuard() {
     if (!sessionStorage.getItem("user")) {
       // redirect back to login page
@@ -437,12 +429,6 @@ WEBD6201 Lab3
 
   function display404() {}
 
-  /**
-   *This function associates and returns a related callback to a route
-   *
-   * @param {string} activeLink
-   * @return {function} 
-   */
   function ActiveLinkCallBack(activeLink) {
     switch (activeLink) {
       case "home":
@@ -555,10 +541,6 @@ WEBD6201 Lab3
     });
   }
 
-  /**
-   *This is the entry point for our program
-   *
-   */
   function Start() {
     console.log("App Started...");
 
